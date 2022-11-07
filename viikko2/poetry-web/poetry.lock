@@ -262,6 +262,14 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "toml"
+version = "0.10.2"
+description = "Python Library for Tom's Obvious, Minimal Language"
+category = "main"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -322,7 +330,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "77de072d7e6d7aeca549c92150c711f4551479eadb532841419be1b669265f42"
+content-hash = "fe72191bf049ca6a4e57086c7106b2d0572f192c8ad9789895f7db5fc730ec15"
 
 [metadata.files]
 astroid = []
@@ -346,6 +354,7 @@ pluggy = []
 pylint = []
 pyparsing = []
 pytest = []
+toml = []
 tomli = []
 tomlkit = []
 typing-extensions = []
