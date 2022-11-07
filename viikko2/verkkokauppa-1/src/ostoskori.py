@@ -1,5 +1,5 @@
 class Ostoskori:
-    
+
     def __init__(self):
         self._tuotteet = []
     
@@ -15,3 +15,5 @@ class Ostoskori:
         hinnat = map(lambda t: t.hinta, self._tuotteet)
 
         return sum(hinnat)
+
+ostoskori = Ostoskori()
