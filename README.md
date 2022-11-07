@@ -1,5 +1,5 @@
 # OHTU-22 Palautusrepositorio
 
-### Repository for exercises 2-13
+### Repository for other exercises
 
 https://github.com/Catrovitch/ohtuvarasto
