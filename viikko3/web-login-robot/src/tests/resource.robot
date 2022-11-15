@@ -28,3 +28,6 @@ Go To Login Page
 
 Go To Main Page
     Go To  ${MAIN URL}
+
+Reset App
+    Reset Application

@@ -1,9 +1,8 @@
-
 *** Settings ***
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
-Test Setup  Create User And Go To Login Page
+Test Setup  Reset App
 
 
 *** Test Cases ***
@@ -39,7 +38,32 @@ Register With Nonmatching Password And Password Confirmation
     Set Password Confirmation  theonering1234
     Click Button  Register
 
+Login After Successful Registration
+    Register An Account
+    Click Link  Continue to main page
+    Click Button  Logout
+    Set Username  samwise
+    Set Password  fathobbit123
+    Click Button  Login
+    Login Should Succeed
+
+Login After Failed Registration
+    Go To Main Page
+    Click Link  Register new user 
+    Set Username  samwise
+    Set Password  fathobbbit123
+    Set Password Confirmation  fathobbit123
+    Click Button  Register
+    Click Link  Login
+    Set Username  Samwise
+    Set Password  fathobbit123
+    Login Page Should Be Open
+
+
 *** Keywords ***
+
+Login Should Succeed
+    Main Page Should Be Open
 
 Set Username
     [Arguments]  ${username}
@@ -57,3 +81,11 @@ Create User And Go To Login Page
     Create User  kalle  kalle123
     Go To Login Page
     Login Page Should Be Open
+
+Register An Account
+    Go To Main Page
+    Click Link  Register new user 
+    Set Username  samwise
+    Set Password  fathobbit123
+    Set Password Confirmation  fathobbit123
+    Click Button  Register
