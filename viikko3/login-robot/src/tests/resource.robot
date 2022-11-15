@@ -7,14 +7,8 @@ Library  ../services/user_service.py
 Input Login Command
     Input  login
 
-Input New Command
-    Input  new
-
 Input Credentials
     [Arguments]  ${username}  ${password}
     Input  ${Username}
     Input  ${Password}
     Run Application
-
-Reset
-    Delete All

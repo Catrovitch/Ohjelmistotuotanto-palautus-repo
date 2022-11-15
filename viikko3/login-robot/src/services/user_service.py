@@ -50,9 +50,9 @@ class UserService:
             raise UserInputError(f"Username is too short")
 
         if len(password) < 8:
-            raise UserInputError(f"Username is too short")
+            raise UserInputError(f"Password is too short")
             
-        if not re.match('^[A-Za-z0-9]*$', password, flags=0):
+        if not re.match('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$', password, flags=0):
             raise UserInputError("Password needs to contain numbers")
 
         return user
