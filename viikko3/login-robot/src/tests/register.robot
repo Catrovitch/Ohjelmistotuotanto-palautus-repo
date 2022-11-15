@@ -1,5 +1,6 @@
 *** Settings ***
 Resource  resource.robot
+Test Setup  Reset Database
 
 *** Test Cases ***
 Register With Valid Username And Password
@@ -8,16 +9,25 @@ Register With Valid Username And Password
     
 Register With Already Taken Username And Valid Password
     Input Credentials  saruman  asdasd
+    Input New Command
     Output Should Contain  User with username Saruman already exists
 
 Register With Too Short Username And Valid Password
-    Input Create User Command  sr  asdasdasdasd12323
+    Input Credentials  sr  asdasdasdasd12323
+    Input New Command
     Output Should Contain  Username is too short
 
 Register With Valid Username And Too Short Password
-    Input Create User Command  sauron  onering1
+    Input Credentials  sauron  onering1
+    Input New Command
     Output Should Contain  Password is too short
 
 Register With Valid Username And Long Enough Password Containing Only Letters
-    Input Create User Command  Gimli  andmyaxe
+    Input Credentials  Gimli  andmyaxe
+    Input New Command
     Output Should Contain  Password needs to contain numbers
+
+
+*** Keywords ***
+Reset Database
+    Reset
