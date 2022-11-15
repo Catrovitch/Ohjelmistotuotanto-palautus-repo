@@ -41,6 +41,23 @@ class UserService:
             raise UserInputError("Username and password are required")
 
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        user = self._user_repository.find_by_username(username)
 
+        if  user is not None:
+            raise UserInputError(f"User with username {username} exists already")
+            
+        if not re.match('^[a-z]+$', username, flags=0):
+            raise UserInputError(f"Username needs to contain only letters a-z")
+            
+        if len(username) < 3:
+            raise UserInputError(f"Username is too short")
+
+        if len(password) < 8:
+            raise UserInputError(f"Password is too short")
+            
+        if not re.match('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$', password, flags=0):
+            raise UserInputError("Password needs to contain numbers")
+
+        return user
 
 user_service = UserService()
