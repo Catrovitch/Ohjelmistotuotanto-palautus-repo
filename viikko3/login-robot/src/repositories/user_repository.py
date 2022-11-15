@@ -17,7 +17,7 @@ class UserRepository:
         )
 
         users_with_username_list = list(users_with_username)
-
+        
         return users_with_username_list[0] if len(users_with_username_list) > 0 else None
 
     def create(self, user):
