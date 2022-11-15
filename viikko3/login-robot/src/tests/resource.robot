@@ -18,7 +18,7 @@ Input Create User Command
     [Arguments]  ${username}  ${password}
     Input  ${username}
     Input  ${password}
-    Input  create_user
+    Run Application
 
 Input Validate Command
     [Arguments]  ${username}  ${password}
