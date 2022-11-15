@@ -9,6 +9,7 @@ ${DELAY}  0.5 seconds
 ${HOME URL}  http://${SERVER}
 ${LOGIN URL}  http://${SERVER}/login
 ${REGISTER URL}  http://${SERVER}/register
+${Main URL}  http://${SERVER}/
 
 *** Keywords ***
 Open And Configure Browser
@@ -24,3 +25,6 @@ Main Page Should Be Open
 
 Go To Login Page
     Go To  ${LOGIN URL}
+
+Go To Main Page
+    Go To  ${MAIN URL}
